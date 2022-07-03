@@ -8,6 +8,9 @@ const CourseInput = props => {
   const [isValid, setIsValid] = useState(true);
 
   const goalInputChangeHandler = event => {
+    if (event.target.value.trim().length > 0) {
+      setIsValid(true);
+    } // 값을 입력하기 시작하면, 잘못된 입력임을 알려주던 스타일을 다시 없애기 위함
     setEnteredValue(event.target.value);
   };
 
